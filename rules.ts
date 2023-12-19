@@ -25,6 +25,58 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
+      {
+        description: "VIM motion left",
+        from: {
+          key_code: "h",
+          modifiers: {mandatory: ["left_command", "left_control", "left_option", "left_shift"]},
+        },
+        to: [
+          {
+            key_code: "left_arrow",
+          },
+        ],
+        type: "basic",
+      },
+      {
+        description: "VIM motion right",
+        from: {
+          key_code: "l",
+          modifiers: {mandatory: ["left_command", "left_control", "left_option", "left_shift"]},
+        },
+        to: [
+          {
+            key_code: "right_arrow",
+          },
+        ],
+        type: "basic",
+      },
+      {
+        description: "VIM motion down",
+        from: {
+          key_code: "j",
+          modifiers: {mandatory: ["left_command", "left_control", "left_option", "left_shift"]},
+        },
+        to: [
+          {
+            key_code: "down_arrow",
+          },
+        ],
+        type: "basic",
+      },
+      {
+        description: "VIM motion up",
+        from: {
+          key_code: "k",
+          modifiers: {mandatory: ["left_command", "left_control", "left_option", "left_shift"]},
+        },
+        to: [
+          {
+            key_code: "up_arrow",
+          },
+        ],
+        type: "basic",
+      },
       //      {
       //        type: "basic",
       //        description: "Disable CMD + Tab to force Hyper Key usage",
@@ -42,6 +94,18 @@ const rules: KarabinerRules[] = [
       //      },
     ],
   },
+  //h: {
+  //  to: [{ key_code: "left_arrow" }],
+  //},
+  //j: {
+  //  to: [{ key_code: "down_arrow" }],
+  //},
+  //k: {
+  //  to: [{ key_code: "up_arrow" }],
+  //},
+  //l: {
+  //  to: [{ key_code: "right_arrow" }],
+  //},
   ...createHyperSubLayers({
     // o = "Open" applications
     o: {

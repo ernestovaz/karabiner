@@ -108,7 +108,16 @@ const rules: KarabinerRules[] = [
             modifiers: ["right_control"],
           }
         ]
-      }
+      },
+      return_or_enter: {
+        description: "System: fullscreen",
+        to: [
+          {
+            key_code: "f",
+            modifiers: ["right_control", "right_command"],
+          },
+        ],
+      },
     },
 
     // r = Rectangle.app
@@ -177,7 +186,7 @@ const rules: KarabinerRules[] = [
         ],
       },
       u: {
-        description: "Rectangle: Center (Undo? idk)",
+        description: "Rectangle: center (Undo? idk)",
         to: [
           {
             key_code: "c",

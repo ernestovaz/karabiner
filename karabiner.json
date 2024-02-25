@@ -753,6 +753,34 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "description": "System: fullscreen",
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "right_control",
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "return_or_enter",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
@@ -1016,7 +1044,7 @@
                 ]
               },
               {
-                "description": "Rectangle: Center (Undo? idk)",
+                "description": "Rectangle: center (Undo? idk)",
                 "to": [
                   {
                     "key_code": "c",

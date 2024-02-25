@@ -81,14 +81,31 @@ const rules: KarabinerRules[] = [
       l: {
         to: [{ key_code: "right_arrow" }],
       },
-      o: {
-        //Show a running apps windows so we can select it
-        //This one has to be set in Settings > Keyboard Shortucuts > Mission Control
-        description: "Show an app's Opened windows",
+      n: {
+        description: "System: go to Next space",
         to: [
           {
-            key_code: "a",
-            modifiers: ["right_command", "right_option"],
+            key_code: "right_arrow",
+            modifiers: ["right_control"],
+          }
+        ]
+      },
+      p: {
+        description: "System: go to Previous space",
+        to: [
+          {
+            key_code: "left_arrow",
+            modifiers: ["right_control"],
+          }
+        ]
+      },
+      o: {
+        //Show all windows of a running app
+        description: "System: current app's Opened windows",
+        to: [
+          {
+            key_code: "down_arrow",
+            modifiers: ["right_control"],
           }
         ]
       }

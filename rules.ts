@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open } from "./utils";
+import { createHyperSubLayers, app, appNewInstance } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -43,8 +43,18 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    // o = "Open" applications
+
+    // o = "Open" programs
     o: {
+      g: appNewInstance("Google Chrome"),
+      f: appNewInstance("Firefox"),
+      c: appNewInstance("IntelliJ IDEA"), //idk, "C"ode?
+      v: appNewInstance("Visual Studio Code"),
+      t: appNewInstance("iTerm"),
+    },
+
+    // p = programs
+    p: {
       g: app("Google Chrome"),
       f: app("Firefox"),
       c: app("IntelliJ IDEA"), //idk, "C"ode?
@@ -53,8 +63,8 @@ const rules: KarabinerRules[] = [
       t: app("iTerm"),
       a: app("Spotify"), //"A"udio, yeah I'm so smart
       e: app("Microsoft Outlook"), //"E"mail
-      w: app("Microsoft Teams"), //for "W"ork, duh
-      z: app("Obsidian") //this is easy, it's for "Z"ettelkasten
+      b: app("Microsoft Teams"), //for a "B"ad app
+      z: app("Obsidian"), //this is easy, it's for "Z"ettelkasten
     },
 
     // s = "system"
@@ -71,6 +81,17 @@ const rules: KarabinerRules[] = [
       l: {
         to: [{ key_code: "right_arrow" }],
       },
+      o: {
+        //Show a running apps windows so we can select it
+        //This one has to be set in Settings > Keyboard Shortucuts > Mission Control
+        description: "Show an app's Opened windows",
+        to: [
+          {
+            key_code: "a",
+            modifiers: ["right_command", "right_option"],
+          }
+        ]
+      }
     },
 
     // r = Rectangle.app

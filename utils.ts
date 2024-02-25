@@ -165,3 +165,7 @@ export function open(what: string): LayerCommand {
 export function app(name: string): LayerCommand {
   return open(`-a '${name}.app'`);
 }
+
+export function appNewInstance(name: string): LayerCommand {
+  return open(`-g -n -a '${name}.app'`);
+}
